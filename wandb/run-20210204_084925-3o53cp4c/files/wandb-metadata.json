@@ -1,0 +1,29 @@
+{
+    "os": "Linux-5.8.0-40-generic-x86_64-with-glibc2.29",
+    "python": "3.8.5",
+    "heartbeatAt": "2021-02-04T07:49:27.977564",
+    "startedAt": "2021-02-04T07:49:25.728318",
+    "docker": null,
+    "gpu": "GeForce RTX 2060",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--coco_path",
+        "../../dataset/",
+        "--output",
+        "Adagrad_output"
+    ],
+    "state": "running",
+    "codePath": "main.py",
+    "program": "main.py",
+    "git": {
+        "remote": "https://github.com/facebookresearch/detr.git",
+        "commit": "a54b77800eb8e64e3ad0d8237789fcbf2f8350c5"
+    },
+    "email": "enricalvove@gmail.com",
+    "root": "/home/enricalvove/Desktop/detr_facebook/detr",
+    "host": "enricalvove-ROG-Strix-G512LV-G512LV",
+    "username": "enricalvove",
+    "executable": "/home/enricalvove/environments/my_env/bin/python3"
+}

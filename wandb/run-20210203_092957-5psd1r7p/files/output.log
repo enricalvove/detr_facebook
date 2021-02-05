@@ -1,0 +1,48 @@
+Not using distributed mode
+git:
+  sha: a54b77800eb8e64e3ad0d8237789fcbf2f8350c5, status: has uncommited changes, branch: master
+
+Namespace(aux_loss=True, backbone='resnet50', batch_size=4, bbox_loss_coef=5, clip_max_norm=0.1, coco_panoptic_path=None, coco_path='../../face_dataset/wider_dataset/', dataset_file='coco', dec_layers=6, device='cuda', dice_loss_coef=1, dilation=False, dim_feedforward=2048, dist_url='env://', distributed=False, dropout=0.1, enc_layers=6, eos_coef=0.1, epochs=300, eval=False, frozen_weights=None, giou_loss_coef=2, hidden_dim=256, lr=0.0001, lr_backbone=1e-05, lr_drop=200, mask_loss_coef=1, masks=False, nheads=8, num_queries=50, num_workers=2, output_dir='facebook_output', position_embedding='sine', pre_norm=False, remove_difficult=False, resume='', seed=42, set_cost_bbox=5, set_cost_class=1, set_cost_giou=2, start_epoch=0, weight_decay=0.0001, world_size=1)
+number of params: 41266438
+loading annotations into memory...
+Done (t=0.69s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.21s)
+creating index...
+index created!
+Start training
+Traceback (most recent call last):
+  File "main.py", line 262, in <module>
+    main(args)
+  File "main.py", line 199, in main
+    train_stats = train_one_epoch(
+  File "/home/enricalvove/Desktop/detr_facebook/detr/engine.py", line 28, in train_one_epoch
+    for samples, targets in metric_logger.log_every(data_loader, print_freq, header):
+  File "/home/enricalvove/Desktop/detr_facebook/detr/util/misc.py", line 222, in log_every
+    for obj in iterable:
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/enricalvove/Desktop/detr_facebook/detr/datasets/coco.py", line 24, in __getitem__
+    img, target = super(CocoDetection, self).__getitem__(idx)
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torchvision/datasets/coco.py", line 134, in __getitem__
+    img = Image.open(os.path.join(self.root, path)).convert('RGB')
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/PIL/Image.py", line 2891, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '../../face_dataset/wider_dataset/train2017/45--Balloonist/45_Balloonist_Balloonist_45_874.jpg'
+

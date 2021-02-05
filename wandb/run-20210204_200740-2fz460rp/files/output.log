@@ -1,0 +1,29 @@
+Not using distributed mode
+git:
+  sha: a54b77800eb8e64e3ad0d8237789fcbf2f8350c5, status: has uncommited changes, branch: master
+
+Namespace(aux_loss=True, backbone='resnet50', batch_size=4, bbox_loss_coef=5, clip_max_norm=0.1, coco_panoptic_path=None, coco_path='../../dataset/', dataset_file='coco', dec_layers=6, device='cuda', dice_loss_coef=1, dilation=False, dim_feedforward=2048, dist_url='env://', distributed=False, dropout=0.1, enc_layers=6, eos_coef=0.1, epochs=15, eval=False, frozen_weights=None, giou_loss_coef=2, hidden_dim=256, lr=0.0001, lr_backbone=1e-05, lr_drop=200, mask_loss_coef=1, masks=False, nheads=8, num_queries=50, num_workers=2, output_dir='SparseAdam_output', position_embedding='sine', pre_norm=False, remove_difficult=False, resume='', seed=42, set_cost_bbox=5, set_cost_class=1, set_cost_giou=2, start_epoch=0, weight_decay=0.0001, world_size=1)
+number of params: 41266438
+loading annotations into memory...
+Done (t=1.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.07s)
+creating index...
+index created!
+Start training
+Traceback (most recent call last):
+  File "main.py", line 263, in <module>
+    main(args)
+  File "main.py", line 200, in main
+    train_stats = train_one_epoch(
+  File "/home/enricalvove/Desktop/detr_facebook/detr/engine.py", line 56, in train_one_epoch
+    optimizer.step()
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/optim/lr_scheduler.py", line 67, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 26, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/enricalvove/environments/my_env/lib/python3.8/site-packages/torch/optim/sparse_adam.py", line 70, in step
+    raise RuntimeError('SparseAdam does not support dense gradients, please consider Adam instead')
+RuntimeError: SparseAdam does not support dense gradients, please consider Adam instead
